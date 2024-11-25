@@ -1,0 +1,53 @@
+Hướng dẫn sử dụng mã nguồn 
+
+Nguyễn Việt Tín - 23NS094
+CN và lập trình web(13)
+
+I. Yêu Cầu Hệ Thống
+Để sử dụng mã nguồn này, đảm bảo máy tính đã cài đặt các phần mềm và phiên bản sau:
+
+    1. PHP: Phiên bản 8.0 trở lên.
+
+    2. Tải và cài đặt PHP từ trang https://www.php.net/downloads.
+ Composer: Công cụ quản lý thư viện PHP.
+
+    3. Tải Composer tại https://getcomposer.org/ và làm theo hướng dẫn cài đặt.
+    4.MySQL: Hệ quản trị cơ sở dữ liệu.
+  Đảm bảo MySQL được cài đặt trên máy, thường đi kèm với XAMPP (tải tại https://www.apachefriends.org/).
+
+II . Các bước cài đặt mã nguồn 
+    1. Tải và Giải Nén Mã Nguồn
+  Tải mã nguồn được cung cấp và giải nén vào thư mục htdocs của   XAMPP.
+  Ví dụ đường dẫn: C:\xampp\htdocs\Laravel.
+    2. Cài đặt thư viện composer 
+   Mở CMD hoặc terminal , di chuyển đến thư mục chứa mã nguồn : 
+	cd C:\xampp\htdocs\project-name
+	composer install
+    3. Cấu hình File .env 
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=Laravel
+	DB_USERNAME=root
+	DB_PASSWORD=''
+     4. Nhập dữ liệu vào MySQL 
+	- Mở XAMPP Control Panel và đảm bảo dịch vụ Apache và MySQL     	đang chạy.
+	- Truy cập PHPMyAdmin:
+	Mở trình duyệt và nhập: http://localhost/phpmyadmin.
+	- Tạo một cơ sở dữ liệu mới:
+	Chọn Databases > Nhập tên cơ sở dữ liệu (ví dụ: 	laravel_database) > Nhấn Create.
+	- Import file SQL:
+	Chọn cơ sở dữ liệu vừa tạo > Nhấn Import.
+	Tải lên file laravel.sql trong thư mục đi kèm mã nguồn và 	nhấn Go.
+     5. Chạy migration 
+	trong CMD gõ : php artisan migrate
+     6. Khởi động server với lệnh 
+	php artisan server
+     7. Truy cập trang web với địa chỉ 
+	Vidu : http://127.0.0.1:8000
+III Giao diện quản lý 
+   - Để truy cập giao diện quản trị : 
+	http://127.0.0.1:8000/admin
+	# Thông tin đăng nhập admin
+	-Tài khoản : admin@gmail.com
+	-Mật khẩu : 123456
